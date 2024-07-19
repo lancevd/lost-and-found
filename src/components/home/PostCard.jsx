@@ -1,16 +1,18 @@
-import Link from 'next/link';
-import React from 'react'
+import Link from "next/link";
+import React from "react";
 
 const PostCard = () => {
   return (
     <div className="sm:w-1/2 mb-10 px-4">
-      <Link href={"/"} className="rounded-lg h-64 overflow-hidden">
-        <img
-          alt="content"
-          className="object-cover object-center h-full w-full"
-          src="https://dummyimage.com/1201x501"
-        />
-      </Link>
+      <div className="rounded-lg h-64 overflow-hidden">
+        <Link href="/post/details" className="w-full h-full">
+          <img
+            alt="content"
+            className="object-cover object-center h-full w-full"
+            src="https://dummyimage.com/1201x501"
+          />
+        </Link>
+      </div>
       <h2 className="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">
         Buy YouTube Videos
       </h2>
@@ -23,6 +25,6 @@ const PostCard = () => {
       </button>
     </div>
   );
-}
+};
 
-export default PostCard
+export default PostCard;
