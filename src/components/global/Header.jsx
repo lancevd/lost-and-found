@@ -13,7 +13,7 @@ const Header = () => {
       <div className="contain flex justify-between items-center p-4">
         <div className="flex items-center">
           <div className="text-2xl font-bold">
-            <Link href="/">My Blog</Link>
+            <Link href="/">Lost'n'Found</Link>
           </div>
         </div>
         <div className="hidden lg:flex items-center gap-6">

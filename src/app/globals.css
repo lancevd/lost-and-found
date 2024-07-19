@@ -9,7 +9,7 @@
 
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .contain {
+    @apply w-[90%] mx-auto
   }
 }
