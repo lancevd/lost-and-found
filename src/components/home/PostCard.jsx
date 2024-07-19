@@ -13,16 +13,21 @@ const PostCard = () => {
           />
         </Link>
       </div>
-      <h2 className="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">
-        Buy YouTube Videos
-      </h2>
-      <p className="leading-relaxed text-base">
-        Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole
-        brunch, slow-carb neutra irony.
-      </p>
-      <button className="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">
-        Button
-      </button>
+      <div className="text-left">
+        <h2 className="">
+          Buy YouTube Videos
+        </h2>
+        <p className="leading-relaxed text-base">
+          Williamsburg occupy sustainable snackwave gochujang. Pinterest
+          cornhole brunch, slow-carb neutra irony.
+        </p>
+        <Link
+          href="/post/details"
+          className="flex mt-6 text-white w-fit bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded"
+        >
+          Read More
+        </Link>
+      </div>
     </div>
   );
 };
