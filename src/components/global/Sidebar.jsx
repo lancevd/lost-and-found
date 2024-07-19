@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import React, { useState } from "react";
 import { TbSearch, TbUserCircle, TbX } from "react-icons/tb";
@@ -31,24 +32,24 @@ const Sidebar = () => {
         </div>
         <nav className="p-4">
           <ul className="flex flex-col gap-4">
-            <li>
-              <Link href="/">
-                <a onClick={() => setShowMenu(false)}>Home</a>
+            <li className="my-2">
+              <Link onClick={() => setShowMenu(false)} href="/">
+                Home
               </Link>
             </li>
-            <li>
-              <Link href="/about">
-                <a onClick={() => setShowMenu(false)}>About</a>
+            <li className="my-2">
+              <Link onClick={() => setShowMenu(false)} href="/about">
+                About
               </Link>
             </li>
-            <li>
-              <Link href="/blog">
-                <a onClick={() => setShowMenu(false)}>Blog</a>
+            <li className="my-2">
+              <Link onClick={() => setShowMenu(false)} href="/blog">
+                Blog
               </Link>
             </li>
-            <li>
-              <Link href="/contact">
-                <a onClick={() => setShowMenu(false)}>Contact</a>
+            <li className="my-2">
+              <Link onClick={() => setShowMenu(false)} href="/contact">
+                Contact
               </Link>
             </li>
           </ul>
@@ -62,10 +63,8 @@ const Sidebar = () => {
           </div>
         </nav>
         <div className="p-4 border-t flex items-center justify-between lg:justify-start lg:gap-4">
-          <Link href="/profile">
-            <a className="text-2xl">
-              <TbUserCircle />
-            </a>
+          <Link href="/profile" className="text-2xl">
+            <TbUserCircle />
           </Link>
         </div>
       </aside>
