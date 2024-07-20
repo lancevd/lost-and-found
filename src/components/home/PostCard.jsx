@@ -17,7 +17,7 @@ const PostCard = () => {
         <h2 className="">
           Buy YouTube Videos
         </h2>
-        <p className="leading-relaxed text-base">
+        <p className="leading-relaxed text-base dark:text-gray-300">
           Williamsburg occupy sustainable snackwave gochujang. Pinterest
           cornhole brunch, slow-carb neutra irony.
         </p>

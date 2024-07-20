@@ -9,8 +9,8 @@
 
 
 @layer utilities {
-  body.dark {
-  @apply bg-gray-900 text-white;
+  body {
+  @apply bg-white dark:bg-gray-900 dark:text-gray-300 antialiased
 }
   .contain {
     @apply w-[90%] mx-auto
@@ -20,6 +20,6 @@
     @apply text-3xl font-bold leading-relaxed
   }
   h2 {
-    @apply text-2xl font-medium text-gray-900 mt-6 mb-3
+    @apply text-2xl font-medium text-gray-900 dark:text-white mt-6 mb-3
   }
 }

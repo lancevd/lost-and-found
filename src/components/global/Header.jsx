@@ -10,7 +10,7 @@ const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <header className="w-full border-b bg-white">
+    <header className="w-full border-b dark:border-gray-600">
       <div className="contain flex justify-between items-center p-4">
         <div className="flex items-center">
           <div className="text-2xl font-bold">
@@ -24,7 +24,7 @@ const Header = () => {
             <Link href="/blog">Blog</Link>
             <Link href="/contact">Contact</Link>
           </nav>
-          <div className="bg-gray-100 flex items-center gap-3 rounded-lg p-2">
+          <div className="bg-gray-100 dark:bg-gray-700 flex items-center gap-3 rounded-lg p-2">
             <TbSearch />
             <input
               type="text"
