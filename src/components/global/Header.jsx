@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { TbSearch, TbUserCircle } from "react-icons/tb";
 import { ImMenu } from "react-icons/im";
 import { TbX } from "react-icons/tb";
+import DarkModeToggle from "./DarkModeToggle";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -34,6 +35,7 @@ const Header = () => {
           <Link href="/profile" className="text-2xl">
             <TbUserCircle />
           </Link>
+          <DarkModeToggle/>
         </div>
         <div className="lg:hidden flex items-center">
           <button onClick={() => setShowMenu(!showMenu)} className="text-2xl">

@@ -9,6 +9,9 @@
 
 
 @layer utilities {
+  body.dark {
+  @apply bg-gray-900 text-white;
+}
   .contain {
     @apply w-[90%] mx-auto
   }
