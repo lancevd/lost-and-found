@@ -3,8 +3,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 text-gray-600 dark:text-gray-200 dark:bg-[#121212] mt-4 lg:mt-8">
-      <div className="container px-5 py-10 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+    <footer className=" bg-gray-100 text-gray-600 dark:text-gray-200 dark:bg-[#121212] mt-4 lg:mt-8">
+      <div className="contain px-5 py-10 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
           <Link
             href="#"
@@ -18,7 +18,7 @@ const Footer = () => {
             your missing possession.
           </p>
         </div>
-        <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+        <div className="contain flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-3 lg:mt-6 md:text-left text-center">
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
             <h2 className="title-font font-bold text-gray-900 dark:text-gray-200  tracking-widest text-sm lg:text-base mb-3">
               Quick Links

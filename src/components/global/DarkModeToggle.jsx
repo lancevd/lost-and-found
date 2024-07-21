@@ -5,34 +5,27 @@ const DarkModeToggle = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+
     if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
+      savedTheme === "dark" ||
+      (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
       document.documentElement.classList.add("dark");
+      setDarkMode(true);
     } else {
       document.documentElement.classList.remove("dark");
+      setDarkMode(false);
     }
-
-    // Whenever the user explicitly chooses light mode
-    localStorage.theme = "light";
-
-    // Whenever the user explicitly chooses dark mode
-    localStorage.theme = "dark";
-
-    // Whenever the user explicitly chooses to respect the OS preference
-    localStorage.removeItem("theme");
-
   }, []);
 
   const toggleDarkMode = () => {
     if (darkMode) {
       document.documentElement.classList.remove("dark");
-      localStorage.theme = "light";
+      localStorage.setItem("theme", "light");
     } else {
       document.documentElement.classList.add("dark");
-      localStorage.theme = "dark";
+      localStorage.setItem("theme", "dark");
     }
     setDarkMode(!darkMode);
   };
