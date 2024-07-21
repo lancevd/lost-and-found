@@ -57,8 +57,8 @@ const Header = () => {
               </Link>
             </li>
             <li className="my-2">
-              <Link onClick={() => setShowMenu(false)} href="/blog">
-                Blog
+              <Link onClick={() => setShowMenu(false)} href="/how-it-works">
+                How it Works
               </Link>
             </li>
             <li className="my-2">
