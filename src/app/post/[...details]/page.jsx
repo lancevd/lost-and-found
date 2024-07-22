@@ -4,7 +4,7 @@ const page = () => {
   return (
     <main className="contain">
       <main className="pt-8 pb-16 lg:pt-16 lg:pb-24 ">
-        <div className="flex justify-between px-4 mx-auto max-w-screen-xl ">
+        <div className="flex justify-between gap-6 px-4 mx-auto max-w-screen-xl ">
           <article className="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
             <header className="mb-4 lg:mb-6 not-format">
               <address className="flex items-center mb-6 not-italic">
@@ -15,13 +15,11 @@ const page = () => {
                     alt="Jese/ Leos"
                   />
                   <div>
-                    <a
-                      href="#"
-                      rel="author"
+                    <p
                       className="text-xl font-bold text-gray-900 dark:text-white"
                     >
                       Ciroma Chukwuma Adekinle
-                    </a>
+                    </p>
                     <p className="text-base text-gray-500 dark:text-gray-400">
                       Computer Science
                     </p>
@@ -60,7 +58,7 @@ const page = () => {
             </p>
           </article>
           {/* ASIDE */}
-          <article className="max-w-xs">
+          <aside className="max-w-xs hidden lg:block">
             <a href="#">
               <img
                 src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png"
@@ -81,7 +79,7 @@ const page = () => {
             >
               Read in 2 minutes
             </a>
-          </article>
+          </aside>
         </div>
       </main>
 

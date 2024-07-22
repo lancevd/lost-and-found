@@ -11,9 +11,9 @@ const Header = () => {
 
   return (
     <header className="w-full border-b dark:border-gray-600">
-      <div className="contain flex justify-between items-center p-4">
+      <div className="contain flex justify-between gap-4 items-center p-4">
         <div className="flex items-center">
-          <div className="text-2xl font-bold">
+          <div className="text-xl sm:text-2xl font-bold">
             <Link href="/">Lost'n'Found</Link>
           </div>
         </div>
@@ -45,20 +45,21 @@ const Header = () => {
           </Link>
           <DarkModeToggle />
         </div>
-        <div className="lg:hidden flex items-center">
+        <div className="lg:hidden flex gap-3 items-center">
           <Link
             href={"/post"}
-            className="flex text-white w-fit bg-indigo-500 border-0 py-1 px-5 mr-3 focus:outline-none hover:bg-indigo-600 rounded"
+            className="flex text-white w-fit bg-indigo-500 border-0 py-1 px-5 focus:outline-none hover:bg-indigo-600 rounded"
           >
             Post
           </Link>
+          <DarkModeToggle />
           <button onClick={() => setShowMenu(!showMenu)} className="text-2xl">
             {showMenu ? <TbX /> : <ImMenu />}
           </button>
         </div>
       </div>
       {showMenu && (
-        <nav className="lg:hidden bg-white w-full border-t">
+        <nav className="lg:hidden w-full border-t">
           <ul className="flex flex-col items-center p-4">
             <li className="my-2">
               <Link onClick={() => setShowMenu(false)} href="/">
