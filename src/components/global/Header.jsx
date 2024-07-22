@@ -20,8 +20,8 @@ const Header = () => {
         <div className="hidden lg:flex items-center gap-6">
           <nav className="flex gap-4">
             <Link href="/">Home</Link>
-            <Link href="/about">About</Link>
-            <Link href="/blog">Blog</Link>
+            <a href="/about">About</a>
+            <Link href="/how-it-works">How it works</Link>
             <Link href="/contact">Contact</Link>
           </nav>
           <div className="bg-gray-100 dark:bg-gray-700 flex items-center gap-3 rounded-lg p-2">
@@ -32,12 +32,26 @@ const Header = () => {
               placeholder="Search..."
             />
           </div>
+        </div>
+        <div className="hidden lg:flex items-center gap-6">
+          <Link
+            href={"/post"}
+            className="flex text-white w-fit bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded"
+          >
+            Post
+          </Link>
           <Link href="/profile" className="text-2xl">
             <TbUserCircle />
           </Link>
-          <DarkModeToggle/>
+          <DarkModeToggle />
         </div>
         <div className="lg:hidden flex items-center">
+          <Link
+            href={"/post"}
+            className="flex text-white w-fit bg-indigo-500 border-0 py-1 px-5 mr-3 focus:outline-none hover:bg-indigo-600 rounded"
+          >
+            Post
+          </Link>
           <button onClick={() => setShowMenu(!showMenu)} className="text-2xl">
             {showMenu ? <TbX /> : <ImMenu />}
           </button>
