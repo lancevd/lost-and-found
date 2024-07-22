@@ -82,7 +82,7 @@ const Header = () => {
               </Link>
             </li>
             <li className="my-2 w-full">
-              <div className="bg-gray-100 flex items-center gap-3 rounded-lg p-2 w-full">
+              <div className="bg-gray-100 dark:bg-gray-700 flex items-center gap-3 rounded-lg p-2 w-full">
                 <TbSearch />
                 <input
                   type="text"
