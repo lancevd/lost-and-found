@@ -16,40 +16,30 @@ const Editor = ({ contents, onChange }) => {
       minHeight: "400px",
       buttonList: [
         ["undo", "redo"],
-        // ["font", "fontSize", "formatBlock"],
         ["bold", "italic", "underline", "strike"],
         ["fontColor", "hiliteColor"],
         ["removeFormat"],
         ["outdent", "indent"],
         ["align", "horizontalRule", "list"],
         ["link", "image", "video"],
-        // ["fullScreen", "showBlocks", "codeView"],
         ["preview"],
       ],
-      className: "custom-editor", // Adding custom class to SunEditor wrapper
-      //   styleArray: [
-      //     "background-color", // Prevent SunEditor from removing custom background color
-      //   ],
-      addCSS: [
-        ".custom-editor .se-wrapper { background-color: red; }",
-        ".custom-editor .se-wrapper-inner { border-radius: 8px; }",
-        ".custom-editor .se-editable { font-size: 16px; color: #333; }",
-      ],
+      // Ensure onChange is properly set
+      callback: {
+        onChange: function (contents) {
+          if (onChange) {
+            onChange(contents);
+          }
+        },
+      },
     });
 
-    // Add event listener for content changes
-    editorInstanceRef.current.onChange = (contents) => {
-      if (onChange) {
-        onChange(contents);
-      }
-    };
-
-    // Set initial contents
+    // Set initial contents if any
     if (contents) {
       editorInstanceRef.current.setContents(contents);
     }
 
-    // Cleanup on unmount
+    // Cleanup on component unmount
     return () => {
       if (editorInstanceRef.current) {
         editorInstanceRef.current.destroy();
