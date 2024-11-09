@@ -26,7 +26,7 @@ const Page = () => {
       // Handle successful sign-up (e.g., redirect to login page, show message)
     } catch (err) {
       console.error("Error signing up:", err);
-      setError("Sign-up failed. Please try again.");
+      // setError("Sign-up failed. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -47,7 +47,7 @@ const Page = () => {
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
               Create an Account
             </h1>
-            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+            <form onSubmit={handleSubmit} method="POST" className="space-y-4 md:space-y-6">
               <div>
                 <label
                   htmlFor="email"
@@ -63,7 +63,7 @@ const Page = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="name@company.com"
-                  required
+                  // required
                 />
               </div>
               <div>
