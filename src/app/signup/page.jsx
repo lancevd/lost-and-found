@@ -6,7 +6,10 @@ const Page = () => {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("");
   const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
 
   // Form submission handler
   const handleSubmit = async (e) => {
@@ -16,17 +19,28 @@ const Page = () => {
 
     try {
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/register`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}/auth/register`,
         {
           email,
           password,
+          firstName,
+          lastName
         }
       );
-      console.log("Sign-up successful:", response.data);
+      if (response && response.status === 201) {
+        alert("Registration successful")
+        console.log(response.data)
+        setSuccess(response.data.message);
+      } else {
+        console.log(response.data)
+        
+      }
+
+      // console.log("Sign-up successful:", response.data);
       // Handle successful sign-up (e.g., redirect to login page, show message)
     } catch (err) {
       console.error("Error signing up:", err);
-      // setError("Sign-up failed. Please try again.");
+      setError(err.response.data.message);
     } finally {
       setLoading(false);
     }
@@ -47,7 +61,47 @@ const Page = () => {
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
               Create an Account
             </h1>
-            <form onSubmit={handleSubmit} method="POST" className="space-y-4 md:space-y-6">
+            <form
+              onSubmit={handleSubmit}
+              method="POST"
+              className="space-y-4 md:space-y-6"
+            >
+              <div>
+                <label
+                  htmlFor="firstName"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Your firstName
+                </label>
+                <input
+                  type="firstName"
+                  name="firstName"
+                  id="firstName"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="John"
+                  // required
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="lastName"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Your lastName
+                </label>
+                <input
+                  type="lastName"
+                  name="lastName"
+                  id="lastName"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Doe"
+                  // required
+                />
+              </div>
               <div>
                 <label
                   htmlFor="email"
@@ -87,6 +141,7 @@ const Page = () => {
               {/* <div className="flex items-center h-2"></div> */}
 
               {error && <p className="text-red-500 text-sm">{error}</p>}
+              {success && <p className="text-white bg-green-700 p-2 text-sm">{success}</p>}
               <button
                 type="submit"
                 disabled={loading}
