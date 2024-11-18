@@ -6,7 +6,7 @@ const Page = () => {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [firstName, setFirstName] = useState("")
+  const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
@@ -24,28 +24,26 @@ const Page = () => {
           email,
           password,
           firstName,
-          lastName
+          lastName,
         }
       );
       if (response && response.status === 201) {
-        alert("Registration successful")
-        console.log(response.data)
+        alert("Registration successful");
+        console.log(response.data);
         setSuccess(response.data.message);
       } else {
-        console.log(response.data)
-        
+        console.log(response.data);
       }
 
       // console.log("Sign-up successful:", response.data);
       // Handle successful sign-up (e.g., redirect to login page, show message)
     } catch (err) {
       console.error("Error signing up:", err);
-      if (err.response){
+      if (err.response) {
         setError(err.response.data.message);
       } else {
         setError(err.message);
       }
-
     } finally {
       setLoading(false);
     }
@@ -146,7 +144,9 @@ const Page = () => {
               {/* <div className="flex items-center h-2"></div> */}
 
               {error && <p className="text-red-500 text-sm">{error}</p>}
-              {success && <p className="text-white bg-green-700 p-2 text-sm">{success}</p>}
+              {success && (
+                <p className="text-white bg-green-700 p-2 text-sm">{success}</p>
+              )}
               <button
                 type="submit"
                 disabled={loading}
