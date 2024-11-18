@@ -40,7 +40,12 @@ const Page = () => {
       // Handle successful sign-up (e.g., redirect to login page, show message)
     } catch (err) {
       console.error("Error signing up:", err);
-      setError(err.response.data.message);
+      if (err.response){
+        setError(err.response.data.message);
+      } else {
+        setError(err.message);
+      }
+
     } finally {
       setLoading(false);
     }
